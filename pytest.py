@@ -37,7 +37,7 @@ if os.path.isfile(fPath):  # If given path is a file
 elif os.path.isdir(fPath):
     #  txtMask = re.compile(r"(.*\.+log)|(.*\.+txt)", re.IGNORECASE)  # Filetypes to look for, e.g. (^.*\.+log$)|(^.*\.+txt$)
     dirFiles = os.listdir(fPath)  # All files in directory
-    with open(r".\output.txt", "w") as outFile:
+    with open(r"output.txt", "w") as outFile:
         #  for i in tqdm(range(100), desc='Progress', colour="#03A062"):
         #  for curFile in tqdm(dirFiles, desc='Progress'):  # Current file from the list
         for curFile in dirFiles:  # Current file from the list
