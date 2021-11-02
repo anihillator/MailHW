@@ -24,7 +24,6 @@ except re.error:
 fPath = argsParsed.filepath
 
 if os.path.isfile(fPath):  # If given path is a file
-    foundFiles = 1
     with open(fPath) as file:
         lines = file.readlines()
     with open(r".\output.txt", "w") as outFile:  # Create output file
@@ -36,7 +35,6 @@ if os.path.isfile(fPath):  # If given path is a file
                     outFile.write(l)  # Print each match into file
 # re.search
 elif os.path.isdir(fPath):
-    foundFiles = 2
     #  txtMask = re.compile(r"(.*\.+log)|(.*\.+txt)", re.IGNORECASE)  # Filetypes to look for, e.g. (^.*\.+log$)|(^.*\.+txt$)
     dirFiles = os.listdir(fPath)  # All files in directory
     with open(r".\output.txt", "w") as outFile:
@@ -52,5 +50,4 @@ elif os.path.isdir(fPath):
                             outFile.write(l)
     print("\nDone!")
 else:
-    foundFiles = 0
     sys.exit("\nFiles/path not found. Execution aborted.")
